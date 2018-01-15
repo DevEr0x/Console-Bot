@@ -18,8 +18,14 @@ Date: 2018-01-14
                 margin-top: 200px;
                 font-family: 'Raleway', sans-serif;
             }
+            a{
+                color: blue;
+                /*background-color: white;*/
+            }
             a:hover{
                 font-size: 110%;
+                color: black;
+                cursor: pointer;
             }
             #header{
                 position: absolute;
@@ -104,6 +110,7 @@ Date: 2018-01-14
             button:hover{
                 width: 60%;
                 height: 110px;
+                cursor: pointer;
             }
             .center{
                 text-align: center;
@@ -131,7 +138,7 @@ Date: 2018-01-14
     </head>
     <body>
         <div id="header">
-            <img id="pic" src="https://github.com/Project-Crystal/Console-Bot/blob/master/consoleavatar.png?raw=true" height="155px">
+            <img id="pic" src="https://github.com/Project-Crystal/Console-Bot/blob/master/consoleavatar.png?raw=true" height="155" alt='Consoles avatar'>
             <h1 id="text">Console</h1>
             <p id="subtext">~Discord Bot~</p>
         </div>       <!--Header-->
@@ -157,12 +164,6 @@ Date: 2018-01-14
                     <a href="https://discordapp.com/oauth2/authorize?client_id=304083592491827200&scope=bot&permissions=76806"><button>Invite Console</button></a>
                 </div>
             </div>
-            
-            <div class='chunkOffSet'>
-                <h1 class='chunk-head'>Support Server</h1>
-                <p>Console has a support server for anyone to join and get support(Or just chill and meme, I really don't care.)</p>
-                <strong>Go here: <a href="https://discord.gg/MF7jYzE">Click Me!</a></strong>
-            </div>
 
             <div class="chunkOffSet">
                 <h1 class="chunk-head">The Developer</h1>
@@ -182,11 +183,27 @@ Date: 2018-01-14
                 <p class='note'>Using ?help [command] will give you more information.</p>
                 
                 <div class='center'>
-                    <p><a href='#random'>Random</a> - <a href='#info'>Info</a> - <a href='#math'>Math</a> - <a href='#moderation'>Moderation</a></p>
+                    <h1 id="list-header">Select A command list below</h1>
+                    <p><a onclick="blurbChange(document.getElementById('random'))" id='random'>Random</a> - <a onclick="blurbChange(document.getElementById('info'))" id='info'>Info</a> - <a onclick="blurbChange(document.getElementById('math'))" id='math'>Math</a> - <a onclick="blurbChange(document.getElementById('mod'))" id='mod'>Moderation</a> - <a onclick="blurbChange(document.getElementById('emotes'))" id='emotes'>Emotes</a></p>
                 </div>
 
-                <h3 id='random'>Random Commands:</h3>
-                <ul>
+                <div id="selected-list">
+                    <p class='note'>
+                        To see the individual commands for each category, select one of the lists above.
+                    </p>
+                </div>
+            </div>
+                        <div class='chunk'>
+                <h1 class='chunk-head'>Support Server</h1>
+                <p>Console has a support server for anyone to join and get support(Or just chill and meme, I really don't care.)</p>
+                <strong>Go here: <a href="https://discord.gg/MF7jYzE">Click Me!</a></strong>
+            </div>
+        </div>
+        
+        <!--The Code the contains the lists-->
+        <script>
+            var randomList = `
+                    <ul>
                     <li><span class="command">?Ping</span> - Replies with "Pong"</li>
                     <li><span class="command">?Hello</span> - Replies with a greeting</li>
                     <li><span class="command">?On</span> - A check to see if the bot is online</li>
@@ -212,39 +229,93 @@ Date: 2018-01-14
                     <li><span class="command">?LovesMe</span> - Ever played "He/She loves me, he/she loves me not"? It's that.</li>
                     <li><span class='command'>?Kms</span> - Poetic (Literally replies with some poem type thing)</li>
                     <li><span class='command'>?SendHelp</span> - I literally can't even.</li>
-                </ul>
-
-                <h3 id='info'>Info Commands:</h3>
-                <ul>
+                    <li><span class='command'>?Jimmy</span> - For a friend...</li>
+                    <li><span class='command'>?EatMyAss</span> - For a friend... (Fuckin' weirdo)</li>
+                    <li><span class='command'>?Abra</span> - Truly a magical command, isn't it?</li>
+                    <li><span class='command'>?RateThem</span> - Same thing as ?RateMe except you mention a user.</li>
+                </ul>`;
+            var mathList = `
+                    <ul>
+                    <li><span class="command">?Add</span> - Adds 2 numbers together</li>
+                    <li><span class="command">?Sub</span> - Subtracts the second number from the first</li>
+                    <li><span class="command">?Remainder</span> - Divides two numbers and displays the remainder.</li>
+                    <li><span class="command">?Multiply</span> - Multiplies 2 numbers together</li>
+                    <li><span class="command">?Divide</span> - Divides the first number by the second number</li>
+                </ul>`;
+            var infoList = `
+                    <ul>
                     <li><span class="command">?Info</span> - Gives some info about the bot.</li>
                     <li><span class="command">?Server</span> - Displays some Server Info</li>
                     <li><span class="command">?Help</span> - Displays all the commands</li>
                     <li><span class="command">?Invite</span> - Gives an invite to the support server</li>
                     <li><span class='command'>?Website</span> - Sends you a link to this page.</li>
                     <li><span class='command'>?Stalk</span> - Gets you more information about a specific user.</li>
-                </ul>
-
-                <h3 id='math'>Math Commands:</h3>
-                <ul>
-                    <li><span class="command">?Add</span> - Adds 2 numbers together</li>
-                    <li><span class="command">?Sub</span> - Subtracts the second number from the first</li>
-                    <li><span class="command">?Remainder</span> - Divides two numbers and displays the remainder.</li>
-                    <li><span class="command">?Multiply</span> - Multiplies 2 numbers together</li>
-                    <li><span class="command">?Divide</span> - Divides the first number by the second number</li>
-                </ul>
-
-                <h3 id='moderation'>Moderation Commands:</h3>
+                    <li><span class='command'>?Uptime</span> - Basically useless, I only added it to test something.</li>
+                </ul>`;
+            var moderationList = `
                 <p class="note">All of these commands require "Admin" role to work</p>
                 <ul>
                     <li><span class="command">?Kick</span> - Kicks a member.</li>
                     <li><span class="command">?Ban</span> - Bans a member.</li>
                     <li><span class="command">?Prune</span> - Deletes the specified amount of messages [1-500]</li>
                     <li><span class='command'>?Magicnick</span> - Gives the user a magic role which will change color every time a user with the role sends a message.</li>
-                </ul>
-            </div>
-            <div class="chunk">
-                <h1 id="bottom-bar"><a href="#header">Back to top</a></h1>
-            </div>
-        </div>
+                    <li><span class='command'>?GiveRole</span> - Gives a user the specified role.</li>
+                    <li><span class='command'>?RemoveRole</span> - Removes the specified role from a user</li>
+                </ul>`;
+            var emotesList = `
+                <p class='note'>Add a 'd' to the end of any of these commands to delete the command line.</p>
+                <ul>
+                    <li><span class='command'>?Lenny</span> - ( ͡° ͜ʖ ͡°)</li>
+                    <li><span class='command'>?TableFlip</span> - (╯°□°）╯︵ ┻━┻</li>
+                    <li><span class='command'>?UnFlip</span> - ┬─┬﻿ ノ( ゜-゜ノ)</li>
+                    <li><span class='command'>?Shrug</span> - ¯\_(ツ)_/¯</li>
+                    <li><span class='command'>?WTFDude</span> - ಠ_ಠ</li>
+                    <li><span class='command'>?LuvU</span> - ♥‿♥</li>
+                    <li><span class='command'>?TooHappy</span> - ◕‿◕</li>
+                    <li><span class='command'>?Kiss</span> - 💋</li>
+                    <li><span class='command'>?Yiss</span> - ಠ‿ಠ</li>
+                    <li><span class='command'>?Murder</span> - ლ(ಠ益ಠლ)</li>
+                    <li><span class='command'>?Flex</span> - ᕙ(⇀‸↼‶)ᕗ</li>
+                    <li><span class='command'>?Spider</span> - ᄽὁȍ ̪ őὀᄿ</li>
+                    <li><span class='command'>?Wink</span> - ◕‿↼</li>
+                </ul>`;
+        </script>
+        <!--The Code that actually changes the command section-->
+            <script>
+            //Initial Box Variables
+            var boxHeadingEl = document.getElementById("list-header");
+            var blurbEl = document.getElementById("selected-list");
+                
+            //Preset for the box. (Auto set to the "About" page)
+//            blurbChange(document.getElementById("about"));
+                
+            //Function: (This changes the box when called to do so)
+        function blurbChange(id) {
+            var changer = id.innerHTML;
+            boxHeadingEl.innerHTML = changer;
+            switch (changer) {
+                case "Random":
+                boxHeadingEl.innerHTML = changer;
+                blurbEl.innerHTML = randomList;
+                break;
+                case "Math":
+                blurbEl.innerHTML = mathList;
+                break;
+                case "Info":
+                blurbEl.innerHTML = infoList;
+                break;
+                case "Moderation":
+                blurbEl.innerHTML = moderationList;
+                break;
+                case "Emotes":
+                blurbEl.innerHTML = emotesList;
+                break;
+                default:
+                boxHeadingEl.innerHTML = changer;
+                blurbEl.innerHTML = aboutBlurb;
+                break;
+            }
+         }
+            </script>
     </body>
 </html>
