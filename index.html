@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<!--
+Author: Eric Mazza (DevEr0x)
+Date: 2018-01-14
+-->
+
+<html>
+    <head>
+        <title>Console Bot: Discord</title>
+        <link rel="shortcut icon" href="https://github.com/Zer0GameDev/Console-Bot/blob/master/console%20avatar.png?raw=true">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: rgb(180,180,180);
+                margin-top: 200px;
+                font-family: 'Raleway', sans-serif;
+            }
+            a:hover{
+                font-size: 110%;
+            }
+            #header{
+                position: absolute;
+                width: 100%;
+                top: 0px;
+                left: 0px;
+                height: 130px;
+                background-color: #15A1FA;
+                text-align: center;
+                padding-top: 10px;
+                font-size: 25px;
+                z-index: 3;
+                border-bottom: black 5px ridge;
+            }
+            #pic{
+                position: relative;
+                bottom: 25px;
+                right: 180px;
+            }
+            #text{
+                position: relative;
+                bottom: 150px;
+            }
+            #subtext{
+                position: relative;
+                bottom: 190px;
+                font-size: 70%;
+            }
+            .column{
+                float: left;
+                margin-left: 6%;
+                margin-right: 6%;
+                /*                border: red 5px dashed;*/
+                width: 35%;
+            }
+            .chunk{
+                width: 100%;
+                border: 2px black solid;
+                background-color: gray;
+                border-radius: 25px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+            .chunk-head{
+                text-align: center;
+                border-bottom: 2px black solid;
+                margin: 0px;
+            }
+            .chunkOffSet{
+                width: 100%;
+                border: 2px black solid;
+                background-color: gray;
+                border-radius: 25px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 60px;
+                margin-bottom: 20px;
+                padding-bottom: 20px
+            }
+            ul{
+                list-style-type: none;   
+                padding: 0px;
+            }
+            button{
+                border-radius: 5px; 
+                -moz-border-radius: 5px; 
+                -webkit-border-radius: 5px; 
+                border: 3px solid #2b71e2;
+                background-color: #15A1FA;
+                height: 100px;
+                width: 50%;
+                text-align: center;
+                font-size: 185%;
+                font-family: 'VT323', monospace;
+            }
+            button:active{
+                background-color: #2b71e2;
+                border: 3px solid #15A1FA;
+            }
+            button:hover{
+                width: 60%;
+                height: 110px;
+            }
+            .center{
+                text-align: center;
+            }
+            #bottom-bar{
+                text-align: center;
+                margin: 0px;
+                padding-top: 20px;
+            }
+            .command{
+                color: white;
+                font-size: 110%;
+                line-height: 25px;
+            }
+            .note{
+                background-color: #15A1FA;
+                text-align: center;
+                border: 2px inset grey;
+                padding: 2px;
+            }
+            h3{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <img id="pic" src="https://github.com/Project-Crystal/Console-Bot/blob/master/consoleavatar.png?raw=true" height="155px">
+            <h1 id="text">Console</h1>
+            <p id="subtext">~Discord Bot~</p>
+        </div>       <!--Header-->
+
+        <div class="column">  
+            <div class="chunkOffSet">
+                <h1 class="chunk-head">About</h1>
+
+                <p> Console is a discord bot that I have created to help me learn more about the coding language Java Script, and it's many variations.<br>
+                    This is a bot that I'm just doing in my spare time, so don't expect anything too fancy. 
+                    I still think it can be pretty handy though. I personally use it for it's moderation features, but it does have some pretty entertaining commands as well.
+                </p>
+                <br>
+                <strong>The bot is now online 24/7</strong>
+            </div>
+
+            <div class="chunkOffSet">
+                <h1 class="chunk-head">Invite</h1>
+
+                <p>This button will take you to the special screen for inviting Console to your server: </p>
+                <br>
+                <div class="center">
+                    <a href="https://discordapp.com/oauth2/authorize?client_id=304083592491827200&scope=bot&permissions=76806"><button>Invite Console</button></a>
+                </div>
+            </div>
+            
+            <div class='chunkOffSet'>
+                <h1 class='chunk-head'>Support Server</h1>
+                <p>Console has a support server for anyone to join and get support(Or just chill and meme, I really don't care.)</p>
+                <strong>Go here: <a href="https://discord.gg/MF7jYzE">Click Me!</a></strong>
+            </div>
+
+            <div class="chunkOffSet">
+                <h1 class="chunk-head">The Developer</h1>
+                <strong>This section is for more about me, the developer.</strong>
+                <br>
+                <p>Well, you can come talk to me in the support server if you're interested, but I promise you: I'm not that interesting.</p>
+                <p>Nah, jk. If you wanna know more: You can go to my own personal website <a href="http://li516-28.members.linode.com/personal-site/">here.</a></p>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="chunk">
+                <h1 class="chunk-head">Commands</h1>
+                <h2 class="note">Prefix: ?</h2>
+                <strong>Note: The bot uses this set prefix, there is currently no way to change it.</strong>
+                <p class='note'>Using ?help [command] will give you more information.</p>
+                
+                <div class='center'>
+                    <p><a href='#random'>Random</a> - <a href='#info'>Info</a> - <a href='#math'>Math</a> - <a href='#moderation'>Moderation</a></p>
+                </div>
+
+                <h3 id='random'>Random Commands:</h3>
+                <ul>
+                    <li><span class="command">?Ping</span> - Replies with "Pong"</li>
+                    <li><span class="command">?Hello</span> - Replies with a greeting</li>
+                    <li><span class="command">?On</span> - A check to see if the bot is online</li>
+                    <li><span class="command">?RateMe</span> - Will rate you on a scale from 1-100</li>
+                    <li><span class="command">?CoinFlip</span> - Flips a coin</li>
+                    <li><span class="command">?Joke</span> - Tells a joke</li>
+                    <li><span class="command">?8Ball</span> - Ask it a question</li>
+                    <li><span class="command">?Roll</span> - Rolls a 6 sided die</li>
+                    <li><span class="command">?Buttfuck</span> - This is a weird one</li>
+                    <li><span class="command">?Quote</span> - Says a quote by a person you don't know</li>
+                    <li><span class="command">?Avatar</span> - Mention a user to display their avatar</li>
+                    <li><span class="command">?KMN</span> - Displays the suicide prevention hotline</li>
+                    <li><span class="command">?Insult</span> - Insults you</li>
+                    <li><span class="command">?Night</span> - Displays a goodnight message</li>
+                    <li><span class="command">?Talk</span> - Makes Console Bot send whatever you type.</li>
+                    <li><span class="command">?Talkd</span> - Does the same thing as the Say command, but it deletes your command.</li>
+                    <li><span class="command">?SmashPass</span> - Replies with a response to the question: Smash or Pass?</li>
+                    <li><span class='command'>?NSFW</span> - Naughty Naughty</li>
+                    <li><span class='command'>?Potato</span> - For a friend...</li>
+                    <li><span class='command'>?Pun</span> - Who doesn't love puns? (Everyone)</li>
+                    <li><span class='command'>?Joy</span> - I hope this brings you some "Joy".</li>
+                    <li><span class="command">?Marco</span> - Polo!</li>
+                    <li><span class="command">?LovesMe</span> - Ever played "He/She loves me, he/she loves me not"? It's that.</li>
+                    <li><span class='command'>?Kms</span> - Poetic (Literally replies with some poem type thing)</li>
+                    <li><span class='command'>?SendHelp</span> - I literally can't even.</li>
+                </ul>
+
+                <h3 id='info'>Info Commands:</h3>
+                <ul>
+                    <li><span class="command">?Info</span> - Gives some info about the bot.</li>
+                    <li><span class="command">?Server</span> - Displays some Server Info</li>
+                    <li><span class="command">?Help</span> - Displays all the commands</li>
+                    <li><span class="command">?Invite</span> - Gives an invite to the support server</li>
+                    <li><span class='command'>?Website</span> - Sends you a link to this page.</li>
+                    <li><span class='command'>?Stalk</span> - Gets you more information about a specific user.</li>
+                </ul>
+
+                <h3 id='math'>Math Commands:</h3>
+                <ul>
+                    <li><span class="command">?Add</span> - Adds 2 numbers together</li>
+                    <li><span class="command">?Sub</span> - Subtracts the second number from the first</li>
+                    <li><span class="command">?Remainder</span> - Divides two numbers and displays the remainder.</li>
+                    <li><span class="command">?Multiply</span> - Multiplies 2 numbers together</li>
+                    <li><span class="command">?Divide</span> - Divides the first number by the second number</li>
+                </ul>
+
+                <h3 id='moderation'>Moderation Commands:</h3>
+                <p class="note">All of these commands require "Admin" role to work</p>
+                <ul>
+                    <li><span class="command">?Kick</span> - Kicks a member.</li>
+                    <li><span class="command">?Ban</span> - Bans a member.</li>
+                    <li><span class="command">?Prune</span> - Deletes the specified amount of messages [1-500]</li>
+                    <li><span class='command'>?Magicnick</span> - Gives the user a magic role which will change color every time a user with the role sends a message.</li>
+                </ul>
+            </div>
+            <div class="chunk">
+                <h1 id="bottom-bar"><a href="#header">Back to top</a></h1>
+            </div>
+        </div>
+    </body>
+</html>
